@@ -71,7 +71,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           {/* === search dialog === */}
           <div>
-            <Dialog>
+            <Dialog onOpenChange={() => setText(null)} >
               <DialogTrigger>
                 <Button
                   variant="ghost"
