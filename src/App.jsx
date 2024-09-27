@@ -23,7 +23,7 @@ function App() {
               element={<About />}
             />
           </Route>
-          {/* Login route without Layout */}
+          {/* routes without Layout */}
           <Route
             path="/login"
             element={<Login />}

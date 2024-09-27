@@ -5,11 +5,11 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <div>
-      <Navbar /> {/* Always show Navbar */}
+      <Navbar />
       <main>
         <Outlet /> {/* This is where child routes will render */}
       </main>
-      {/* <Footer /> Always show Footer */}
+      {/* <Footer />*/}
     </div>
   );
 };

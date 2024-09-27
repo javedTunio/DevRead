@@ -58,6 +58,20 @@ const Login = () => {
       setIsLoading(false);
     }
   };
+  //  === how to show errors from response/backedn ===
+  // if (response.success) {
+  //         console.log("Login successful");
+  //         // Redirect or perform some action on successful login
+  //       } else {
+  //         // Handle backend errors
+  //         if (response.error === "invalid_email") {
+  //           form.setError("email", { message: "Email not registered" });
+  //         } else if (response.error === "wrong_password") {
+  //           form.setError("password", { message: "Incorrect password" });
+  //         } else {
+  //           // For other errors, show a general message
+  //           form.setError("root", { message: "Login failed. Try again." });
+  //         }
 
   return (
     <div className="w-svw h-svh flex items-center justify-center ">
