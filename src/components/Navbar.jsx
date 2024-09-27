@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "./ui/input";
 import { useState } from "react";
 import { Separator } from "./ui/separator";
+import UserMenu from "./UserMenu";
 
 export default function Navbar() {
   const [text, setText] = useState(false);
@@ -68,16 +69,17 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
+          {/* === search dialog === */}
           <div>
             <Dialog>
               <DialogTrigger>
                 <Button
-                  variant="secondary"
-                  className="">
-                  <Search size={24} />
+                  variant="ghost"
+                  className="rounded-full p-2 h-fit">
+                  <Search size={28} />
                 </Button>
               </DialogTrigger>
-              <DialogContent className=" sm:w-[90vw] max-w-screen-md max-h-[80vh] overflow-y-auto">
+              <DialogContent className="top-[10vh] translate-y-0 sm:w-[90vw] max-w-screen-md  overflow-hidden">
                 <div className="mt-8 my-4 flex gap-4 ">
                   <Input
                     type="text"
@@ -88,21 +90,59 @@ export default function Navbar() {
                     <Search size={24} />
                   </Button>
                 </div>
-                <div>{text}</div>
+                {/* <div>{text}</div> */}
+                <div className="overflow-y-auto max-h-[60vh]">
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                  <div>{text}</div>
+                </div>
               </DialogContent>
             </Dialog>
           </div>
           {/* === will render on auth conditions === */}
-          <Button
+          {/* <Button
             asChild
             className=" "
-            variant="secondary">
+            variant="ghost">
             <Link to="">
-              <SquarePen size={14} /> <span className="ml-2">Write</span>
+              <SquarePen size={16} /> <span className="ml-2">Write</span>
             </Link>
-          </Button>
+          </Button> */}
           {/* === will render on auth conditions === */}
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <Button asChild>
               <Link to="/login">Sign in</Link>
             </Button>
@@ -111,7 +151,10 @@ export default function Navbar() {
               variant="outline">
               <Link to="/signup">Sign up</Link>
             </Button>
-          </div>
+          </div> */}
+
+          {/* === user menu === */}
+          <UserMenu />
         </div>
       </div>
       <Separator />

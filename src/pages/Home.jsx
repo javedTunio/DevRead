@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex gap-8">
       {/* === main container === */}
-      <main className="flex-1">
+      <main className="flex-1 max-w-screen-md lg:max-w-full mx-auto ">
         <div className="flex flex-col ">
           {/* Loop through the blogs data and render BlogCard for each */}
           {blogData.map((blog, index) => (
@@ -21,7 +21,7 @@ export default function Home() {
         </div>
       </main>
       {/* === sidebar === */}
-      <aside className="border border-black w-[30%]">Recommended topics</aside>
+      <aside className="hidden lg:block w-[30%]">Recommended topics</aside>
     </div>
   );
 }

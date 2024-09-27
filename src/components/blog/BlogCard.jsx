@@ -7,7 +7,7 @@ export default function BlogCard({ blog }) {
       {/* Wrap the entire card in a link */}
       <Link
         to={`/blogs/${blog.id}`}
-        className="flex w-full mt-4">
+        className="flex items-center w-full mt-4">
         {/* === Blog Content on the Left === */}
         <div className="flex-1 p-4">
           {/* Author and Date Information */}
@@ -40,11 +40,11 @@ export default function BlogCard({ blog }) {
         </div>
 
         {/* === Blog Image on the Right === */}
-        <div className="w-[150px]">
+        <div className="w-[150px] aspect-square">
           <img
             src={blog.image}
             alt={blog.title}
-            className="h-full w-full object-cover"
+            className=" h-full w-full object-cover"
           />
         </div>
       </Link>
