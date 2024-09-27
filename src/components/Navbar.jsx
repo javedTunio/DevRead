@@ -5,6 +5,7 @@ import { Search, SquarePen } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "./ui/input";
 import { useState } from "react";
+import { Separator } from "./ui/separator";
 
 export default function Navbar() {
   const [text, setText] = useState(false);
@@ -50,67 +51,70 @@ export default function Navbar() {
     //     </ul>
     //   </div>
     // </nav>
-    <header className="w-full max-w-screen-2xl mx-auto flex justify-between items-center px-4 py-2">
-      {/* === logo === */}
-      <div className="text-3xl font-bold text-primary  ">
-        <Link
-          to="/"
-          className="md:hidden  ">
-          DR
-        </Link>
-        <Link
-          to="/"
-          className="hidden md:block">
-          DevRead
-        </Link>
-      </div>
+    <header className="  mb-8">
+      <div className=" flex justify-between items-center py-4">
+        {/* === logo === */}
+        <div className="text-3xl font-bold text-primary  ">
+          <Link
+            to="/"
+            className="md:hidden  ">
+            DR
+          </Link>
+          <Link
+            to="/"
+            className="hidden md:block">
+            DevRead
+          </Link>
+        </div>
 
-      <div className="flex items-center gap-4">
-        <div>
-          <Dialog>
-            <DialogTrigger>
-              <Button
-                variant="secondary"
-                className="">
-                <Search size={24} />
-              </Button>
-            </DialogTrigger>
-            <DialogContent className=" sm:w-[90vw] max-w-screen-md max-h-[80vh] overflow-y-auto">
-              <div className="mt-8 my-4 flex gap-4 ">
-                <Input
-                  type="text"
-                  placeholder="Search"
-                  onChange={(e) => setText(e.target.value)}
-                />
-                <Button type="submit">
+        <div className="flex items-center gap-4">
+          <div>
+            <Dialog>
+              <DialogTrigger>
+                <Button
+                  variant="secondary"
+                  className="">
                   <Search size={24} />
                 </Button>
-              </div>
-              <div>{text}</div>
-            </DialogContent>
-          </Dialog>
-        </div>
-        {/* === will render on auth conditions === */}
-        <Button
-          asChild
-          className=" "
-          variant="secondary">
-          <Link to="">
-            <SquarePen size={14} /> <span className="ml-2">Write</span>
-          </Link>
-        </Button>
-        {/* === will render on auth conditions === */}
-        <div className="flex items-center gap-4">
-          <Button asChild>
-            <Link to="/login">Sign in</Link>
-          </Button>
+              </DialogTrigger>
+              <DialogContent className=" sm:w-[90vw] max-w-screen-md max-h-[80vh] overflow-y-auto">
+                <div className="mt-8 my-4 flex gap-4 ">
+                  <Input
+                    type="text"
+                    placeholder="Search"
+                    onChange={(e) => setText(e.target.value)}
+                  />
+                  <Button type="submit">
+                    <Search size={24} />
+                  </Button>
+                </div>
+                <div>{text}</div>
+              </DialogContent>
+            </Dialog>
+          </div>
+          {/* === will render on auth conditions === */}
           <Button
             asChild
-            variant="outline">
-            <Link to="/signup">Sign up</Link>
+            className=" "
+            variant="secondary">
+            <Link to="">
+              <SquarePen size={14} /> <span className="ml-2">Write</span>
+            </Link>
           </Button>
+          {/* === will render on auth conditions === */}
+          <div className="flex items-center gap-4">
+            <Button asChild>
+              <Link to="/login">Sign in</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline">
+              <Link to="/signup">Sign up</Link>
+            </Button>
+          </div>
         </div>
       </div>
+      <Separator />
     </header>
   );
 }

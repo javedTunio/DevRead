@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Understanding JavaScript Closures",
+    "summary": "An in-depth look at closures in JavaScript and how they work.",
+    "author": "John Doe",
+    "date": "2023-09-27",
+    "image": "https://via.placeholder.com/150",
+    "tags": ["JavaScript", "Programming"]
+  },
+  {
+    "id": 2,
+    "title": "Introduction to React Hooks",
+    "summary": "Learn about useState, useEffect, and other hooks in React.",
+    "author": "Jane Smith",
+    "date": "2023-09-26",
+    "image": "https://via.placeholder.com/150",
+    "tags": ["React", "Frontend"]
+  },
+  {
+    "id": 3,
+    "title": "Getting Started with Vue 3",
+    "summary": "A beginner's guide to building apps with Vue 3.",
+    "author": "Alex Brown",
+    "date": "2023-09-25",
+    "image": "https://via.placeholder.com/150",
+    "tags": ["Vue.js", "JavaScript", "Frontend"]
+  },
+  {
+    "id": 4,
+    "title": "Mastering CSS Grid Layout",
+    "summary": "A complete guide to building responsive layouts using CSS Grid.",
+    "author": "Sarah Connor",
+    "date": "2023-09-24",
+    "image": "https://via.placeholder.com/150",
+    "tags": ["CSS", "Web Design"]
+  },
+  {
+    "id": 5,
+    "title": "Node.js Best Practices",
+    "summary": "A collection of best practices for building scalable Node.js applications.",
+    "author": "Mike Ross",
+    "date": "2023-09-23",
+    "image": "https://via.placeholder.com/150",
+    "tags": ["Node.js", "Backend"]
+  },
+  {
+    "id": 6,
+    "title": "Exploring TypeScript for JavaScript Developers",
+    "summary": "How TypeScript can enhance your JavaScript development workflow.",
+    "author": "Emma Watson",
+    "date": "2023-09-22",
+    "image": "https://via.placeholder.com/150",
+    "tags": ["TypeScript", "JavaScript"]
+  },
+  {
+    "id": 7,
+    "title": "Building Responsive Websites",
+    "summary": "Learn the core principles of building responsive and mobile-first websites.",
+    "author": "John Wick",
+    "date": "2023-09-21",
+    "image": "https://via.placeholder.com/150",
+    "tags": ["Web Design", "HTML", "CSS"]
+  },
+  {
+    "id": 8,
+    "title": "Asynchronous JavaScript: Promises and Async/Await",
+    "summary": "Understand the key concepts of asynchronous programming in JavaScript.",
+    "author": "Neo Anderson",
+    "date": "2023-09-20",
+    "image": "https://via.placeholder.com/150",
+    "tags": ["JavaScript", "Async", "Programming"]
+  }
+]

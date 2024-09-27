@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Blog from "./pages/Blog";
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
             <Route
               path="/about"
               element={<About />}
+            />
+            <Route
+              path="/blogs/:id"
+              element={<Blog />}
             />
           </Route>
           {/* routes without Layout */}
