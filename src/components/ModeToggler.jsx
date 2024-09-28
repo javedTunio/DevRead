@@ -49,9 +49,13 @@ export default function ModeToggler() {
 
   // Get the appropriate icon based on the current mode
   const getIcon = () => {
-    if (mode === "dark") return <MoonIcon />;
-    if (mode === "light") return <SunIcon />;
-    return systemTheme === "dark" ? <MoonIcon /> : <SunIcon />; // System mode reflects the system theme
+    if (mode === "dark") return <MoonIcon size={18} />;
+    if (mode === "light") return <SunIcon size={18} />;
+    return systemTheme === "dark" ? (
+      <MoonIcon size={18} />
+    ) : (
+      <SunIcon size={18} />
+    ); // System mode reflects the system theme
   };
 
   return (
@@ -59,7 +63,7 @@ export default function ModeToggler() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="rounded-full p-2 h-fit outline-none focus:outline-none">
+          className=" p-2 h-fit">
           {getIcon()}
         </Button>
       </DropdownMenuTrigger>

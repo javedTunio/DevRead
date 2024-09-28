@@ -19,28 +19,28 @@ import { Link } from "react-router-dom";
 import { useState } from "react"; // Don't forget to import useState
 
 export default function UserMenu() {
-  const [user] = useState(false); // Change this based on your auth logic
+  const [user] = useState(true); // Change this based on your auth logic
 
   const userLinks = [
     {
       href: "/profile",
       label: "Profile",
-      icon: <UserCircle className="mr-2 size-5" />,
+      icon: <UserCircle size={18}  />,
     },
     {
       href: "/library",
       label: "Library",
-      icon: <BookOpen className="mr-2 size-5" />,
+      icon: <BookOpen size={18}  />,
     },
     {
       href: "/stories",
       label: "Stories",
-      icon: <Newspaper className="mr-2 size-5" />,
+      icon: <Newspaper size={18}  />,
     },
     {
       href: "/stats",
       label: "Stats",
-      icon: <BarChart2 className="mr-2 size-5" />,
+      icon: <BarChart2 size={18}  />,
     },
   ];
   const secondaryLinks = [
@@ -56,7 +56,7 @@ export default function UserMenu() {
         <Button
           variant="Link"
           className=" relative h-fit w-fit p-0 rounded-full">
-          <Avatar className="h-10 w-10 ">
+          <Avatar className="h-8 w-8 ">
             <AvatarImage
               src="https://github.com/shadcn.png"
               alt="@shadcn"
@@ -80,7 +80,7 @@ export default function UserMenu() {
                   href={link.href}
                   className="flex items-center cursor-pointer">
                   {link.icon}
-                  <span>{link.label}</span>
+                  <span className="ml-2">{link.label}</span>
                 </Link>
               </DropdownMenuItem>
             ))}

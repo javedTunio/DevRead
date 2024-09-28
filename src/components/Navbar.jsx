@@ -56,7 +56,7 @@ export default function Navbar() {
     <header className="  mb-8">
       <div className=" flex justify-between items-center py-4">
         {/* === logo === */}
-        <div className="text-3xl font-bold text-primary  ">
+        <div className="text-xl font-bold text-primary  ">
           <Link
             to="/"
             className="md:hidden  ">
@@ -76,19 +76,19 @@ export default function Navbar() {
               <DialogTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="rounded-full p-2 h-fit">
-                  <Search size={28} />
+                  className="p-2 h-fit ">
+                  <Search size={18} />
                 </Button>
               </DialogTrigger>
               <DialogContent className="top-[10vh] translate-y-0 sm:w-[90vw] max-w-screen-md  overflow-hidden">
-                <div className="mt-8 my-4 flex gap-4 ">
+                <div className="mt-8 my-4 flex items-center gap-4 ">
                   <Input
                     type="text"
                     placeholder="Search"
                     onChange={(e) => setText(e.target.value)}
                   />
                   <Button type="submit">
-                    <Search size={24} />
+                    <Search size={18} />
                   </Button>
                 </div>
                 {/* <div>{text}</div> */}
@@ -136,10 +136,11 @@ export default function Navbar() {
           {/* === will render on auth conditions === */}
           {/* <Button
             asChild
-            className=" "
+            className="p-2 h-fit "
             variant="ghost">
             <Link to="">
-              <SquarePen size={16} /> <span className="ml-2">Write</span>
+              <SquarePen size={18} />{" "}
+              <span className="ml-1 text-sm">Write</span>
             </Link>
           </Button> */}
           {/* === will render on auth conditions === */}
