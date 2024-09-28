@@ -7,31 +7,31 @@ export default function BlogCard({ blog }) {
       {/* Wrap the entire card in a link */}
       <Link
         to={`/blogs/${blog.id}`}
-        className="flex items-center w-full mt-4">
+        className="flex items-start md:items-center w-full mt-4">
         {/* === Blog Content on the Left === */}
-        <div className="flex-1 p-4">
+        <div className="flex-1 pr-3">
           {/* Author and Date Information */}
-          <small className="text-xs lg:text-sm text-muted-foreground">
+          <small className="text-xs md:text-sm text-muted-foreground">
             By <span className="font-medium">{blog.author}</span> on{" "}
             <span>{blog.date}</span>
           </small>
 
           {/* Title and Summary */}
           <div>
-            <h2 className="pb-2 text-xl lg:text-3xl font-semibold tracking-tight">
+            <h2 className="pb-2 text-xl md:text-3xl font-semibold tracking-tight">
               {blog.title}
             </h2>
-            <p className="text-sm lg:text-base lg:leading-7">{blog.summary}</p>
+            <p className="text-sm md:text-base md:leading-7">{blog.summary}</p>
           </div>
 
           {/* Tags */}
-          <div className="mt-2">
+          <div className="mt-1">
             {blog.tags.map((tag, index) => (
               <Button
                 key={index}
                 variant="outline"
                 asChild
-                className="mr-2  text-xs lg:text-sm h-fit py-1 px-2 text-muted-foreground"
+                className="mr-1 mt-1   text-xs md:text-sm h-fit py-1 px-2 text-muted-foreground"
                 onClick={(e) => e.stopPropagation()} // Stop propagation on button click
               >
                 <Link to={`/tags/${tag}`}>{tag}</Link>
@@ -41,7 +41,7 @@ export default function BlogCard({ blog }) {
         </div>
 
         {/* === Blog Image on the Right === */}
-        <div className="w-[150px] aspect-square">
+        <div className="w-[120px] md:w-[150px] aspect-square">
           <img
             src={blog.image}
             alt={blog.title}
