@@ -7,6 +7,7 @@ import { Input } from "./ui/input";
 import { useState } from "react";
 import { Separator } from "./ui/separator";
 import UserMenu from "./UserMenu";
+import ModeToggler from "./ModeToggler";
 
 export default function Navbar() {
   const [text, setText] = useState(false);
@@ -71,8 +72,8 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           {/* === search dialog === */}
           <div>
-            <Dialog onOpenChange={() => setText(null)} >
-              <DialogTrigger>
+            <Dialog onOpenChange={() => setText(null)}>
+              <DialogTrigger asChild>
                 <Button
                   variant="ghost"
                   className="rounded-full p-2 h-fit">
@@ -152,7 +153,8 @@ export default function Navbar() {
               <Link to="/signup">Sign up</Link>
             </Button>
           </div> */}
-
+          {/* === mode toggler === */}
+          <ModeToggler />
           {/* === user menu === */}
           <UserMenu />
         </div>
