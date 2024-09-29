@@ -7,16 +7,16 @@ import TrendingBlogs from "./blog/TrendingBlogs";
 export default function Aside() {
   // Step 1: Define an array of tags
   const tags = [
-    { id: 1, name: "JavaScript", link: "" },
-    { id: 2, name: "React", link: "" },
+    { id: 1, name: "JavaScript", link: "/" },
+    { id: 2, name: "React", link: "/" },
     { id: 3, name: "Vue", link: "" },
-    { id: 4, name: "Tailwind CSS", link: "" },
-    { id: 5, name: "ShadCN UI", link: "" },
-    { id: 6, name: "Web Development", link: "" },
-    { id: 7, name: "Node.js", link: "" },
-    { id: 8, name: "TypeScript", link: "" },
+    { id: 4, name: "Tailwind CSS", link: "/" },
+    { id: 5, name: "ShadCN UI", link: "/" },
+    { id: 6, name: "Web Development", link: "/" },
+    { id: 7, name: "Node.js", link: "/" },
+    { id: 8, name: "TypeScript", link: "/" },
     { id: 9, name: "Next.js", link: "" },
-    { id: 10, name: "Firebase", link: "" },
+    { id: 10, name: "Firebase", link: "/" },
 
     // Add more tags as needed
   ];
