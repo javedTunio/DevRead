@@ -11,7 +11,7 @@ export default function TrendingBlogs() {
           key={blog.id}
           className="w-full flex items-start gap-4">
           {/* === Blog Image on the Right === */}
-          <div className="lg:w-[120px] aspect-square">
+          <div className="lg:w-[100px] ">
             <img
               src={blog.image}
               alt={blog.title}

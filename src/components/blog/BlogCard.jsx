@@ -41,7 +41,7 @@ export default function BlogCard({ blog }) {
         </div>
 
         {/* === Blog Image on the Right === */}
-        <div className="w-[120px] md:w-[150px] aspect-square">
+        <div className="w-[120px] md:w-[150px] ">
           <img
             src={blog.image}
             alt={blog.title}

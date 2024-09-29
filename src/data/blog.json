@@ -5,7 +5,7 @@
     "summary": "An in-depth look at closures in JavaScript and how they work.",
     "author": "John Doe",
     "date": "2023-09-27",
-    "image": "https://via.placeholder.com/150",
+    "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*LyZcwuLWv2FArOumCxobpA.png",
     "tags": ["JavaScript", "Programming"]
   },
   {
@@ -14,7 +14,7 @@
     "summary": "Learn about useState, useEffect, and other hooks in React.",
     "author": "Jane Smith",
     "date": "2023-09-26",
-    "image": "https://via.placeholder.com/150",
+    "image": "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "tags": ["React", "Frontend"]
   },
   {
@@ -23,7 +23,7 @@
     "summary": "A beginner's guide to building apps with Vue 3.",
     "author": "Alex Brown",
     "date": "2023-09-25",
-    "image": "https://via.placeholder.com/150",
+    "image": "https://cdn.prod.website-files.com/610bb663a35dd3364ddbf08c/633d929c815ed377c56cc27b_vue-2022-min-p-800.png",
     "tags": ["Vue.js", "JavaScript", "Frontend"]
   },
   {
@@ -32,7 +32,7 @@
     "summary": "A complete guide to building responsive layouts using CSS Grid.",
     "author": "Sarah Connor",
     "date": "2023-09-24",
-    "image": "https://via.placeholder.com/150",
+    "image": "https://miro.medium.com/v2/resize:fit:3608/format:webp/0*og90_m1gsg9iOY7i.png",
     "tags": ["CSS", "Web Design"]
   },
   {
@@ -41,7 +41,7 @@
     "summary": "A collection of best practices for building scalable Node.js applications.",
     "author": "Mike Ross",
     "date": "2023-09-23",
-    "image": "https://via.placeholder.com/150",
+    "image": "https://delta-dev-software.fr/wp-content/uploads/2024/02/nodejs.jpg",
     "tags": ["Node.js", "Backend"]
   },
   {
@@ -50,7 +50,7 @@
     "summary": "How TypeScript can enhance your JavaScript development workflow.",
     "author": "Emma Watson",
     "date": "2023-09-22",
-    "image": "https://via.placeholder.com/150",
+    "image": "https://www.adm.ee/wordpress/wp-content/uploads/2023/12/javascript_and_typescript-1.jpg",
     "tags": ["TypeScript", "JavaScript"]
   },
   {
@@ -59,7 +59,7 @@
     "summary": "Learn the core principles of building responsive and mobile-first websites.",
     "author": "John Wick",
     "date": "2023-09-21",
-    "image": "https://via.placeholder.com/150",
+    "image": "https://sympli-blog-content.s3.amazonaws.com/dev/2021/03/cover-responsive.png",
     "tags": ["Web Design", "HTML", "CSS"]
   },
   {
@@ -68,7 +68,7 @@
     "summary": "Understand the key concepts of asynchronous programming in JavaScript.",
     "author": "Neo Anderson",
     "date": "2023-09-20",
-    "image": "https://via.placeholder.com/150",
+    "image": "https://i0.wp.com/blog.alexdevero.com/wp-content/uploads/2020/06/08-06-20-how-javascript-async-await-works-and-how-to-use-it-blog.jpg?w=1024&ssl=1",
     "tags": ["JavaScript", "Async", "Programming"]
   }
 ]

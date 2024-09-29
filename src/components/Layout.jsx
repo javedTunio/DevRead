@@ -4,8 +4,9 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div className="w-full max-w-screen-xl mx-auto  px-6 ">
+    <div className="">
       <Navbar />
+      
       <main>
         <Outlet /> {/* This is where child routes will render */}
       </main>
