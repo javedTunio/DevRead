@@ -29,7 +29,7 @@ export default function BlogCard({ blog }) {
             {blog.tags.map((tag, index) => (
               <Button
                 key={index}
-                
+                variant="secondary"
                 asChild
                 className="mr-1 mt-1   text-xs md:text-sm h-fit py-1 px-2"
                 onClick={(e) => e.stopPropagation()} // Stop propagation on button click
