@@ -53,7 +53,7 @@ export default function Navbar() {
     //     </ul>
     //   </div>
     // </nav>
-    <header className="  mb-8">
+    <header className="mb-4 lg:mb-8">
       <div className=" flex justify-between items-center py-4">
         {/* === logo === */}
         <div className="text-xl font-bold text-primary  ">
@@ -133,31 +133,35 @@ export default function Navbar() {
               </DialogContent>
             </Dialog>
           </div>
-          {/* === will render on auth conditions === */}
+          {/* === write button will render on auth conditions === */}
           {/* <Button
             asChild
-            className="p-2 h-fit "
+            className=" px-4 h-fit "
             variant="ghost">
             <Link to="">
               <SquarePen size={18} />{" "}
               <span className="ml-1 text-sm">Write</span>
             </Link>
           </Button> */}
-          {/* === will render on auth conditions === */}
-          {/* <div className="flex items-center gap-4">
-            <Button asChild>
+          {/* === mode toggler === */}
+          <ModeToggler />
+          {/* === signin/up will render on auth conditions === */}
+          <div className="flex items-center gap-4">
+            <Button
+              asChild
+              className=" px-4 h-fit ">
               <Link to="/login">Sign in</Link>
             </Button>
             <Button
               asChild
+              className=" px-4 h-fit "
               variant="outline">
               <Link to="/signup">Sign up</Link>
             </Button>
-          </div> */}
-          {/* === mode toggler === */}
-          <ModeToggler />
+          </div>
+
           {/* === user menu === */}
-          <UserMenu />
+          {/* <UserMenu /> */}
         </div>
       </div>
       <Separator />

@@ -1,10 +1,11 @@
 import BlogCard from "@/components/blog/BlogCard";
 import { Separator } from "@/components/ui/separator";
-import blogData from "../blog.json"; // Import the JSON data
+import blogData from "@/data/blog.json"; // Import the JSON data
+import Aside from "@/components/Aside";
 
 export default function Home() {
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col lg:flex-row gap-4">
       {/* === main container === */}
       <main className="flex-1 max-w-screen-md lg:max-w-full mx-auto ">
         <div className="flex flex-col ">
@@ -21,7 +22,8 @@ export default function Home() {
         </div>
       </main>
       {/* === sidebar === */}
-      <aside className="hidden lg:block w-[30%]">Recommended topics</aside>
+      {/* <aside className="hidden lg:block w-[30%]">Recommended topics</aside> */}
+      <Aside />
     </div>
   );
 }
