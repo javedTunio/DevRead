@@ -1,6 +1,5 @@
-// import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import useCorrectScrollBehavior from "./hooks/useCorrectScrollBehavior";
+// import useCorrectScrollBehavior from "./hooks/useCorrectScrollBehavior";
 
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -9,44 +8,40 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Blog from "./pages/Blog";
 
-function ScrollToTopOnNavigation() {
-  useCorrectScrollBehavior();
-  return null;
-}
+// function ScrollToTopOnNavigation() {
+//   useCorrectScrollBehavior();
+//   return null;
+// }
 
 function App() {
   return (
-    <>
-      <Router>
-        <ScrollToTopOnNavigation />
-        <Routes>
-          {/* Define a route that uses the Layout */}
-          <Route element={<Layout />}>
-            <Route
-              path="/"
-              element={<Home />}
-            />
-            <Route
-              path="/about"
-              element={<About />}
-            />
-            <Route
-              path="/blogs/:id"
-              element={<Blog />}
-            />
-          </Route>
-          {/* routes without Layout */}
+    <Router>
+      {/* <ScrollToTopOnNavigation /> */}
+      <Routes>
+        <Route element={<Layout />}>
           <Route
-            path="/login"
-            element={<Login />}
+            index
+            element={<Home />}
           />
           <Route
-            path="/signup"
-            element={<Signup />}
+            path="about"
+            element={<About />}
           />
-        </Routes>
-      </Router>
-    </>
+          <Route
+            path="blogs/:id"
+            element={<Blog />}
+          />
+        </Route>
+        <Route
+          path="login"
+          element={<Login />}
+        />
+        <Route
+          path="signup"
+          element={<Signup />}
+        />
+      </Routes>
+    </Router>
   );
 }
 
