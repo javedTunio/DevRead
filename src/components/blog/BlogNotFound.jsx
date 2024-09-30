@@ -1,0 +1,18 @@
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+
+export default function BlogNotFound() {
+  return (
+    <div className="w-full mt-[20%] flex flex-col items-center justify-center">
+      <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+        blog not found
+      </h3>
+      {/* <p className="leading-7 [&:not(:first-child)]:mt-6">Go to home page</p> */}
+      <Button
+        asChild
+        className="ml-3 px-6 mt-4">
+        <Link to="/">Home</Link>
+      </Button>
+    </div>
+  );
+}

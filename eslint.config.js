@@ -34,7 +34,7 @@ export default [
         { allowConstantExport: true },
       ],
       "react/prop-types": "off", // Disable the prop-types rule
-      "no-unused-vars": "warn", // Treat unused imports and variables as warnings
+      "no-unused-vars": "off", // Treat unused imports and variables as warnings
     },
   },
 ];

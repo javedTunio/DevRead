@@ -1,5 +1,13 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import useCorrectScrollBehavior from "./hooks/useCorrectScrollBehavior";
+import {
+  Routes,
+  Route,
+  BrowserRouter as Router,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+import { ThemeProvider } from "@/components/theme-provider";
+import useCorrectScrollBehavior from "./hooks/useCorrectScrollBehavior";
 
 // import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -8,64 +16,106 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Blog from "./pages/Blog";
 import Navbar from "./components/Navbar";
+import Layout from "./components/Layout";
+import NotFound from "./pages/NotFound";
 
-// function ScrollToTopOnNavigation() {
-//   useCorrectScrollBehavior();
-//   return null;
-// }
+function ScrollToTopOnNavigation() {
+  useCorrectScrollBehavior();
+  return null;
+}
 
-const MainLayout = ({ children }) => (
-  <>
-    <Navbar />
-    {children}
-    {/* <Footer /> */}
-  </>
-);
+// const MainLayout = ({ children }) => (
+//   <>
+//     <Navbar />
+//     {children}
+//     {/* <Footer /> */}
+//   </>
+// );
 
 function App() {
-  return (
-    <Router>
-      {/* <ScrollToTopOnNavigation /> */}
-      <Routes>
-        {/* <Route
-          path="/"
-          element={<Layout />}>
-          <Route
-            index
-            element={<Home />}
-          />
-          <Route
-            path="about"
-            element={<About />}
-          />
-          <Route
-            path="blogs/:id"
-            element={<Blog />}
-          />
-        </Route> */}
-        <Route
-          path="/"
-          element={<MainLayout> <Home /> </MainLayout>}
-        />
-        <Route
-          path="/about"
-          element={<MainLayout> <About /> </MainLayout>}
-        />
-        <Route
-          path="/blogs/:id"
-          element={<MainLayout> <Blog /> </MainLayout>}
-        />
+  // const router = createBrowserRouter(
+  //   createRoutesFromElements(
+  //     <>
+  //       {/* Group of Routes with Layout */}
+  //       <Route
+  //         path="/"
+  //         element={<Layout />}>
+  //         <Route
+  //           index
+  //           element={<Home />}
+  //         />
+  //         <Route
+  //           path="about"
+  //           element={<About />}
+  //         />
+  //         <Route
+  //           path="blogs/:id"
+  //           element={<Blog />}
+  //         />
+  //       </Route>
 
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-        <Route
-          path="/signup"
-          element={<Signup />}
-        />
-      </Routes>
-    </Router>
+  //       {/* Routes without Layout */}
+  //       <Route
+  //         path="login"
+  //         element={<Login />}
+  //       />
+  //       <Route
+  //         path="signup"
+  //         element={<Signup />}
+  //       />
+  //       {/* === error page === */}
+  //       <Route
+  //         path="*"
+  //         element={<NotFound />}
+  //       />
+  //     </>
+  //   )
+  // );
+
+  return (
+    <ThemeProvider
+      defaultTheme="dark"
+      storageKey="vite-ui-theme">
+      <Router>
+        <ScrollToTopOnNavigation />
+        <Routes>
+          {/* Group of Routes with Layout */}
+          <Route
+            path="/"
+            element={<Layout />}>
+            <Route
+              index
+              element={<Home />}
+            />
+            <Route
+              path="about"
+              element={<About />}
+            />
+            <Route
+              path="blogs/:id"
+              element={<Blog />}
+            />
+          </Route>
+          {/* routes without layout */}
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+          <Route
+            path="/signup"
+            element={<Signup />}
+          />
+          {/* === error page === */}
+          //{" "}
+          <Route
+            path="*"
+            element={<NotFound />}
+          />
+        </Routes>
+      </Router>
+
+      {/* <RouterProvider router={router} /> */}
+    </ThemeProvider>
   );
 }
 

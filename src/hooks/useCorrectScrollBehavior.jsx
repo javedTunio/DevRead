@@ -8,13 +8,13 @@ function useCorrectScrollBehavior() {
 
   useEffect(() => {
     if (navigationType === "POP") {
-      // Do nothing when using browser back/forward
-      // The browser will automatically restore the scroll position
+      //if type is 'POP' it means if going back or forward, do nothing browser will handle itself,
     } else {
-      // For 'PUSH' or 'REPLACE' (new navigation), scroll to top
+      // if PUSH, means adding new path , then scroll to top
       window.scrollTo(0, 0);
     }
 
+    // Update prevPathRef setting the current pathname // not usefull here but can be used in future
     prevPathRef.current = pathname;
   }, [pathname, navigationType]);
 
