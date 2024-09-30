@@ -18,7 +18,9 @@ function App() {
     <Router>
       {/* <ScrollToTopOnNavigation /> */}
       <Routes>
-        <Route element={<Layout />}>
+        <Route
+          path="/"
+          element={<Layout />}>
           <Route
             index
             element={<Home />}
