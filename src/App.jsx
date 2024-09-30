@@ -1,24 +1,33 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import useCorrectScrollBehavior from "./hooks/useCorrectScrollBehavior";
 
-import Layout from "./components/Layout";
+// import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Blog from "./pages/Blog";
+import Navbar from "./components/Navbar";
 
 // function ScrollToTopOnNavigation() {
 //   useCorrectScrollBehavior();
 //   return null;
 // }
 
+const MainLayout = ({ children }) => (
+  <>
+    <Navbar />
+    {children}
+    {/* <Footer /> */}
+  </>
+);
+
 function App() {
   return (
     <Router>
       {/* <ScrollToTopOnNavigation /> */}
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={<Layout />}>
           <Route
@@ -33,13 +42,26 @@ function App() {
             path="blogs/:id"
             element={<Blog />}
           />
-        </Route>
+        </Route> */}
         <Route
-          path="login"
+          path="/"
+          element={<MainLayout> <Home /> </MainLayout>}
+        />
+        <Route
+          path="/about"
+          element={<MainLayout> <About /> </MainLayout>}
+        />
+        <Route
+          path="/blogs/:id"
+          element={<MainLayout> <Blog /> </MainLayout>}
+        />
+
+        <Route
+          path="/login"
           element={<Login />}
         />
         <Route
-          path="signup"
+          path="/signup"
           element={<Signup />}
         />
       </Routes>
