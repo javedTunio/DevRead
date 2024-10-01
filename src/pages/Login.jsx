@@ -23,18 +23,17 @@ import {
 import { Mail, Lock, Loader2, Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
-// Define your Zod schema
-const loginSchema = z.object({
-  email: z.string().email({ message: "Invalid email address" }),
-  password: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters" }),
-});
-
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  // Define your Zod schema
+  const loginSchema = z.object({
+    email: z.string().email({ message: "Invalid email address" }),
+    password: z
+      .string()
+      .min(6, { message: "Password must be at least 6 characters" }),
+  });
   // Set up react-hook-form with Zod resolver
   const form = useForm({
     resolver: zodResolver(loginSchema),
@@ -74,8 +73,8 @@ const Login = () => {
   //         }
 
   return (
-    <div className="w-svw h-svh flex items-center justify-center ">
-      <Card className="w-full h-fit max-w-md ">
+    <div className="w-full px-6 h-svh relative">
+      <Card className="w-full max-w-md mx-auto absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-none md:shadow-sm border-0 md:border transition-all duration-500 ease-in-out">
         <CardHeader className="space-y-2 text-center">
           <CardTitle className="text-3xl ">Login</CardTitle>
           <CardDescription>

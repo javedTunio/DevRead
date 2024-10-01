@@ -23,30 +23,31 @@ import {
 import { Mail, Lock, User, Loader2, Eye, EyeOff, Phone } from "lucide-react";
 import { Link } from "react-router-dom"; // Use React Router for navigation
 
-// Updated Zod schema
-const signupSchema = z
-  .object({
-    name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-    email: z.string().email({ message: "Invalid email address" }),
-    password: z
-      .string()
-      .min(8, { message: "Password must be at least 8 characters" }),
-    password_confirmation: z.string(),
-    contact: z
-      .string()
-      .regex(/^\d+$/, { message: "Must be a valid number" })
-      .min(10, { message: "Contact number must be at least 10 digits" }),
-  })
-  .refine((data) => data.password === data.password_confirmation, {
-    message: "Passwords don't match",
-    path: ["password_confirmation"],
-  });
-
 const Signup = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  // Updated Zod schema
+  const signupSchema = z
+    .object({
+      name: z
+        .string()
+        .min(2, { message: "Name must be at least 2 characters" }),
+      email: z.string().email({ message: "Invalid email address" }),
+      password: z
+        .string()
+        .min(8, { message: "Password must be at least 8 characters" }),
+      password_confirmation: z.string(),
+      contact: z
+        .string()
+        .regex(/^\d+$/, { message: "Must be a valid number" })
+        .min(10, { message: "Contact number must be at least 10 digits" }),
+    })
+    .refine((data) => data.password === data.password_confirmation, {
+      message: "Passwords don't match",
+      path: ["password_confirmation"],
+    });
   // Set up react-hook-form with Zod resolver
   const form = useForm({
     resolver: zodResolver(signupSchema),
@@ -77,8 +78,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="w-svw h-svh flex items-center justify-center">
-      <Card className="w-full max-w-md">
+    <div className="w-full px-6 h-svh relative">
+      <Card className=" w-full max-w-md mx-auto absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-none md:shadow-sm border-0 md:border transition-all duration-500 ease-in-out">
         <CardHeader className="space-y-2 text-center">
           <CardTitle className="text-3xl">Sign Up</CardTitle>
           <CardDescription>Create an account to get started</CardDescription>
@@ -239,7 +240,12 @@ const Signup = () => {
         </CardContent>
         <CardFooter>
           <p className="text-sm text-gray-600 text-center w-full">
-            Already have an account? <Link to="/login" className="hover:underline font-medium text-primary">Login</Link>
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="hover:underline font-medium text-primary">
+              Login
+            </Link>
           </p>
         </CardFooter>
       </Card>
