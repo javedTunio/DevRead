@@ -1,7 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button"; // Adjust the import according to your file structure
 
 export default function BlogCard({ blog }) {
+  const navigate = useNavigate(); // Get the navigate function
+
+  const handleTagClick = (e, tag) => {
+    e.preventDefault();
+    e.stopPropagation(); // Stop the click from propagating to the parent link
+    navigate(`/tags/${tag}`); // Redirect to the tag page
+  };
+
   return (
     <div className="flex items-start">
       {/* Wrap the entire card in a link */}
@@ -30,11 +38,10 @@ export default function BlogCard({ blog }) {
               <Button
                 key={index}
                 variant="secondary"
-                asChild
                 className="mr-1 mt-1   text-xs md:text-sm h-fit py-1 px-2"
-                onClick={(e) => e.stopPropagation()} // Stop propagation on button click
+                onClick={(e) => handleTagClick(e, tag)} // Stop propagation on button click
               >
-                <Link to={`/tags/${tag}`}>{tag}</Link>
+                {tag}
               </Button>
             ))}
           </div>

@@ -77,6 +77,7 @@ function App() {
       defaultTheme="dark"
       storageKey="vite-ui-theme">
       <Router>
+      
         <ScrollToTopOnNavigation />
         <Routes>
           {/* Group of Routes with Layout */}

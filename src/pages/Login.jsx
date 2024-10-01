@@ -22,6 +22,8 @@ import {
 } from "@/components/ui/form";
 import { Mail, Lock, Loader2, Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/firebase";
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -42,35 +44,38 @@ const Login = () => {
       password: "",
     },
   });
-
   const onSubmit = async (data) => {
     setIsLoading(true);
     try {
-      // Simulating an API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      console.log("Form submitted:", data);
-      console.log("email:", data.email, "\npassword:", data.password);
-      // Here you would typically make a fetch request to your authentication endpoint
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      console.log("User logged in successfully");
+      // Handle successful login (e.g., redirect to dashboard)
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error("Login failed:", error.message);
+
+      // Handle specific Firebase authentication errors
+      switch (error.code) {
+        case "auth/user-not-found":
+          form.setError("email", { message: "Email not registered" });
+          break;
+        case "auth/wrong-password":
+          form.setError("password", { message: "Incorrect password" });
+          break;
+        case "auth/invalid-email":
+          form.setError("email", { message: "Invalid email format" });
+          break;
+        case "auth/user-disabled":
+          form.setError("root", { message: "This account has been disabled" });
+          break;
+        default:
+          form.setError("root", {
+            message: "Login failed. Please try again.",
+          });
+      }
     } finally {
       setIsLoading(false);
     }
   };
-  //  === how to show errors from response/backedn ===
-  // if (response.success) {
-  //         console.log("Login successful");
-  //         // Redirect or perform some action on successful login
-  //       } else {
-  //         // Handle backend errors
-  //         if (response.error === "invalid_email") {
-  //           form.setError("email", { message: "Email not registered" });
-  //         } else if (response.error === "wrong_password") {
-  //           form.setError("password", { message: "Incorrect password" });
-  //         } else {
-  //           // For other errors, show a general message
-  //           form.setError("root", { message: "Login failed. Try again." });
-  //         }
 
   return (
     <div className="w-full px-6 h-svh relative">
