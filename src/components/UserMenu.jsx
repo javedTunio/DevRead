@@ -17,30 +17,31 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Link } from "react-router-dom";
 import { useState } from "react"; // Don't forget to import useState
+import useAuth from "@/hooks/useAuth";
 
 export default function UserMenu() {
-  const [user] = useState(true); // Change this based on your auth logic
+  const { currentUser, logout } = useAuth(); // getting current logged in user
 
   const userLinks = [
     {
       href: "/profile",
       label: "Profile",
-      icon: <UserCircle size={18}  />,
+      icon: <UserCircle size={18} />,
     },
     {
       href: "/library",
       label: "Library",
-      icon: <BookOpen size={18}  />,
+      icon: <BookOpen size={18} />,
     },
     {
       href: "/stories",
       label: "Stories",
-      icon: <Newspaper size={18}  />,
+      icon: <Newspaper size={18} />,
     },
     {
       href: "/stats",
       label: "Stats",
-      icon: <BarChart2 size={18}  />,
+      icon: <BarChart2 size={18} />,
     },
   ];
   const secondaryLinks = [
@@ -66,7 +67,7 @@ export default function UserMenu() {
         </Button>
       </DropdownMenuTrigger>
 
-      {user ? (
+      {currentUser ? (
         <DropdownMenuContent
           className="p-4"
           align="end"
@@ -104,13 +105,13 @@ export default function UserMenu() {
             <Button
               variant="ghost"
               className="w-full flex flex-col items-center gap-1 "
-              onClick={() => console.log("Sign out")}>
+              onClick={() => logout()}>
               <div className="flex items-center">
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Sign out</span>
               </div>
               <span className=" text-xs text-muted-foreground">
-                example@gmail.com
+                {currentUser.email}
               </span>
             </Button>
           </DropdownMenuItem>

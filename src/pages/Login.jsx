@@ -22,10 +22,10 @@ import {
 } from "@/components/ui/form";
 import { Mail, Lock, Loader2, Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/firebase";
+import useAuth from "@/hooks/useAuth";
 
 const Login = () => {
+  const { login } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -47,7 +47,8 @@ const Login = () => {
   const onSubmit = async (data) => {
     setIsLoading(true);
     try {
-      await signInWithEmailAndPassword(auth, data.email, data.password);
+      // await signInWithEmailAndPassword(auth, data.email, data.password);
+      await login(data.email, data.password);
       console.log("User logged in successfully");
       // Handle successful login (e.g., redirect to dashboard)
     } catch (error) {

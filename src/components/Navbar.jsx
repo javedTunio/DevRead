@@ -8,8 +8,10 @@ import { useState } from "react";
 import { Separator } from "./ui/separator";
 import UserMenu from "./UserMenu";
 import ModeToggler from "./ModeToggler";
+import useAuth from "@/hooks/useAuth";
 
 export default function Navbar() {
+  const { currentUser } = useAuth(); // getting current logged in user
   const [text, setText] = useState(false);
   return (
     <header className="mb-4 lg:mb-8">
@@ -93,35 +95,40 @@ export default function Navbar() {
                 </DialogContent>
               </Dialog>
             </div>
-            {/* === write button will render on auth conditions === */}
-            {/* <Button
-            asChild
-            className=" px-4 h-fit "
-            variant="ghost">
-            <Link to="">
-              <SquarePen size={18} />{" "}
-              <span className="ml-1 text-sm">Write</span>
-            </Link>
-          </Button> */}
             {/* === mode toggler === */}
             <ModeToggler />
-            {/* === signin/up will render on auth conditions === */}
-            <div className="flex items-center gap-4">
-              <Button
-                asChild
-                className=" px-4 h-fit ">
-                <Link to="/login">Sign in</Link>
-              </Button>
-              <Button
-                asChild
-                className=" px-4 h-fit "
-                variant="outline">
-                <Link to="/signup">Sign up</Link>
-              </Button>
-            </div>
+            {/* === write button will render on auth conditions === */}
+            {currentUser ? (
+              <div className="flex items-center gap-4">
+                <Button
+                  asChild
+                  className=" px-4 h-fit "
+                  variant="ghost">
+                  <Link to="">
+                    <SquarePen size={18} />{" "}
+                    <span className="ml-1 text-sm">Write</span>
+                  </Link>
+                </Button>
+                {/* === user menu === */}
+                <UserMenu />
+              </div>
+            ) : (
+              <div className="flex items-center gap-4">
+                <Button
+                  asChild
+                  className=" px-4 h-fit ">
+                  <Link to="/login">Sign in</Link>
+                </Button>
+                <Button
+                  asChild
+                  className=" px-4 h-fit "
+                  variant="outline">
+                  <Link to="/signup">Sign up</Link>
+                </Button>
+              </div>
+            )}
 
-            {/* === user menu === */}
-            {/* <UserMenu /> */}
+            {/* === signin/up will render on auth conditions === */}
           </div>
         </div>
       </div>

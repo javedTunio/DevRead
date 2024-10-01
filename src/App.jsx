@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
 import useCorrectScrollBehavior from "./hooks/useCorrectScrollBehavior";
+import ContextProvider from "./context/ContextProvider";
 
 // import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -15,7 +16,7 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Blog from "./pages/Blog";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
 
@@ -77,44 +78,45 @@ function App() {
       defaultTheme="dark"
       storageKey="vite-ui-theme">
       <Router>
-      
-        <ScrollToTopOnNavigation />
-        <Routes>
-          {/* Group of Routes with Layout */}
-          <Route
-            path="/"
-            element={<Layout />}>
+        {/* === all contexts wraped in this provider === */}
+        <ContextProvider>
+          <ScrollToTopOnNavigation />
+          <Routes>
+            {/* Group of Routes with Layout */}
             <Route
-              index
-              element={<Home />}
+              path="/"
+              element={<Layout />}>
+              <Route
+                index
+                element={<Home />}
+              />
+              <Route
+                path="about"
+                element={<About />}
+              />
+              <Route
+                path="blogs/:id"
+                element={<Blog />}
+              />
+            </Route>
+            {/* routes without layout */}
+            <Route
+              path="/login"
+              element={<Login />}
             />
             <Route
-              path="about"
-              element={<About />}
+              path="/signup"
+              element={<Signup />}
             />
-            <Route
-              path="blogs/:id"
-              element={<Blog />}
-            />
-          </Route>
-          {/* routes without layout */}
-          <Route
-            path="/login"
-            element={<Login />}
-          />
-          <Route
-            path="/signup"
-            element={<Signup />}
-          />
-          {/* === error page === */}
+            {/* === error page === */}
 
-          <Route
-            path="*"
-            element={<NotFound />}
-          />
-        </Routes>
+            <Route
+              path="*"
+              element={<NotFound />}
+            />
+          </Routes>
+        </ContextProvider>
       </Router>
-
       {/* <RouterProvider router={router} /> */}
     </ThemeProvider>
   );
