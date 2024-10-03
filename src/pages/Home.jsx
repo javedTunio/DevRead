@@ -8,7 +8,7 @@ export default function Home() {
     <div className="flex flex-col lg:flex-row gap-4 max-w-screen-xl mx-auto px-6">
       {/* === main container === */}
       <main className="flex-1 max-w-screen-md lg:max-w-full mx-auto ">
-      <h1>The app is currentlyl under development and data is static</h1>
+      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">The app is currentlyl under development and data is static</h1>
         <div className="flex flex-col ">
           {/* Loop through the blogs data and render BlogCard for each */}
           {blogData.map((blog, index) => (
